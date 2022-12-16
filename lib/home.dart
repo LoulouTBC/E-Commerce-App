@@ -12,6 +12,22 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Column(
+        children: [
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                    onPressed: () {}, icon: Icon(Icons.notifications_none)),
+                IconButton(
+                    onPressed: () {}, icon: Icon(Icons.messenger_outline))
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
