@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ui/home.dart';
 import 'package:my_ui/signup.dart';
 
 void main() {
@@ -12,10 +13,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // theme: ThemeData(
+      //   splashColor: Colors.amber,
+      // ),
       debugShowCheckedModeBanner: false,
       initialRoute: "signup",
       routes: {
         "signup": ((context) => SignUP()),
+        "home": ((context) => HomePage()),
       },
     );
   }
