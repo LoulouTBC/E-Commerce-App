@@ -2,8 +2,19 @@ import 'package:flutter/material.dart';
 
 class CircleIcon extends StatelessWidget {
   String myText;
-   CircleIcon({
+  final DecorationImage? myImage;
+  Color color1;
+  Color color2;
+  Color shadowColor;
+  final Icon? myIcon;
+  CircleIcon({
+    this.myImage,
+    this.myIcon,
     required this.myText,
+    required this.color1,
+    required this.color2,
+    required this.shadowColor,
+    // required this.myImage,
     Key? key,
   }) : super(key: key);
 
@@ -16,34 +27,35 @@ class CircleIcon extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              decoration:
-                  const BoxDecoration(shape: BoxShape.circle, boxShadow: [
+              decoration: BoxDecoration(shape: BoxShape.circle, boxShadow: [
                 BoxShadow(
-                  color: Color.fromARGB(110, 255, 153, 0),
-                  spreadRadius: 2,
-                  blurRadius: 10,
-                  offset: Offset(0, 4), // changes position of shadow
+                  color: shadowColor,
+                  spreadRadius: -10,
+                  blurRadius: 20,
+                  offset: Offset(0, 10), // changes position of shadow
                 ),
               ]),
               child: CircleAvatar(
+                backgroundColor: Colors.white,
                 radius: 35,
-                // minRadius: 20,
-                // backgroundColor:
-                //     Color(0xffFF6969),
                 child: Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('images/icons8-clothes-48.png')),
+                  decoration: BoxDecoration(
+                    // image: DecorationImage(
+                    //     image: AssetImage('images/$myImage'), opacity: 0.8),
+                    image: myImage,
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Color.fromARGB(255, 231, 194, 138),
-                        Colors.orange,
+                        color1,
+                        color2
+                        // Color.fromARGB(255, 231, 194, 138),
+                        // Colors.orange,
                       ],
                     ),
                   ),
+                  child: myIcon,
                 ),
               ),
             ),
