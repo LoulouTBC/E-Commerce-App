@@ -1,9 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:my_ui/constants/circleIcon.dart';
+import 'package:my_ui/constants/latestContainer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,7 +21,6 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               flex: 1,
               child: Container(
-                color: Colors.green,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -44,7 +40,6 @@ class _HomePageState extends State<HomePage> {
                       flex: 3,
                       child: Container(
                         // width: size.width,
-                        color: Colors.amber,
                         child: Column(
                           children: [
                             Expanded(
@@ -114,21 +109,6 @@ class _HomePageState extends State<HomePage> {
                                       color: Colors.red,
                                     ),
                                   )),
-                                  // Expanded(
-                                  //   child: Container(
-                                  //     color: Color.fromARGB(255, 65, 172, 177),
-                                  //   ),
-                                  // ),
-                                  // Expanded(
-                                  //   child: Container(
-                                  //     color: Color.fromARGB(255, 38, 168, 90),
-                                  //   ),
-                                  // ),
-                                  // Expanded(
-                                  //   child: Container(
-                                  //     color: Color.fromARGB(255, 233, 30, 30),
-                                  //   ),
-                                  // ),
                                 ],
                               )),
                             ),
@@ -166,50 +146,21 @@ class _HomePageState extends State<HomePage> {
                                   child: ListView(
                                 scrollDirection: Axis.horizontal,
                                 children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: AssetImage(
-                                              'images/fashion3.png')),
-                                      color: Colors.pink,
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                    width: size.width * 0.8,
-                                    child: Padding(
-                                      padding: EdgeInsets.only(
-                                          left: size.width * 0.1,
-                                          top: size.width * 0.1),
-                                      child: Container(
-                                        color: Colors.amber,
-                                        alignment: Alignment.topLeft,
-                                        child: Column(
-                                          // mainAxisAlignment:
-                                          //     MainAxisAlignment,
-                                          children: [
-                                            Text(
-                                              'For All your ',
-                                              style: TextStyle(fontSize: 25),
-                                              textAlign: TextAlign.start,
-                                            ),
-                                            Text(
-                                              'Summer clothing',
-                                              style: TextStyle(fontSize: 25),
-                                              textAlign: TextAlign.start,
-                                            ),
-                                            Text(
-                                              'needs',
-                                              style: TextStyle(fontSize: 25),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
+                                  LatestContainer(
+                                    seemore: true,
+                                    size: size,
+                                    image: '1.png',
+                                    text1: 'For all your',
+                                    text2: 'summer clothing',
+                                    text3: 'needs',
                                   ),
-                                  Container(
-                                    width: 100,
-                                    // color: Colors.amber,
-                                  )
+                                  LatestContainer(
+                                      size: size,
+                                      image: '2.png',
+                                      text1: '',
+                                      text2: '',
+                                      text3: '',
+                                      seemore: false)
                                 ],
                               )),
                             ),
@@ -222,7 +173,30 @@ class _HomePageState extends State<HomePage> {
             Expanded(
                 flex: 2,
                 child: Container(
-                  color: Colors.blue,
+                  // color: Colors.blue,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: Container(
+                              
+                          margin: EdgeInsets.only(right: 8),
+                          color: Colors.amber,
+                        )),
+                        Expanded(
+                            child: Container(
+                          margin: EdgeInsets.only(right: 8),
+                          color: Colors.pink,
+                        )),
+                        Expanded(
+                            child: Container(
+                          margin: EdgeInsets.only(right: 8),
+                          color: Colors.green,
+                        )),
+                      ],
+                    ),
+                  ),
                 )),
           ],
         ),
