@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_ui/constants/circleIcon.dart';
 import 'package:my_ui/constants/latestContainer.dart';
+import 'package:my_ui/constants/latestProduct.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      // backgroundColor: Color.fromARGB(255, 247, 242, 242),
       body: Padding(
         padding: EdgeInsets.all(size.width * 0.05),
         child: Column(
@@ -33,7 +35,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Expanded(
-                flex: 5,
+                flex: 8,
                 child: Column(
                   children: [
                     Expanded(
@@ -65,6 +67,10 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Expanded(
                                       child: CircleIcon(
+                                          func: () {
+                                            Navigator.pushNamed(
+                                                context, "signup");
+                                          },
                                           myText: 'Apparel',
                                           color1: const Color.fromARGB(
                                               255, 231, 194, 138),
@@ -76,6 +82,10 @@ class _HomePageState extends State<HomePage> {
                                                   'images/icons8-clothes-48.png')))),
                                   Expanded(
                                       child: CircleIcon(
+                                          func: () {
+                                            Navigator.pushNamed(
+                                                context, "signup");
+                                          },
                                           myText: 'Beauty',
                                           color1: const Color.fromARGB(
                                               255, 184, 220, 230),
@@ -88,6 +98,10 @@ class _HomePageState extends State<HomePage> {
                                                   'images/icons8-lipstick.png')))),
                                   Expanded(
                                       child: CircleIcon(
+                                          func: () {
+                                            Navigator.pushNamed(
+                                                context, "signup");
+                                          },
                                           myText: 'Shoes',
                                           color1: Color.fromARGB(
                                               255, 209, 230, 184),
@@ -100,6 +114,9 @@ class _HomePageState extends State<HomePage> {
                                                   'images/icons8-women-shoe-side-view-50.png')))),
                                   Expanded(
                                       child: CircleIcon(
+                                    func: () {
+                                      Navigator.pushNamed(context, "signup");
+                                    },
                                     myText: 'See All',
                                     color1: Color.fromARGB(255, 255, 255, 255),
                                     color2: Color.fromARGB(255, 255, 255, 255),
@@ -171,29 +188,16 @@ class _HomePageState extends State<HomePage> {
                   ],
                 )),
             Expanded(
-                flex: 2,
+                flex: 5,
                 child: Container(
                   // color: Colors.blue,
                   child: Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Row(
-                      children: [
-                        Expanded(
-                            child: Container(
-                              
-                          margin: EdgeInsets.only(right: 8),
-                          color: Colors.amber,
-                        )),
-                        Expanded(
-                            child: Container(
-                          margin: EdgeInsets.only(right: 8),
-                          color: Colors.pink,
-                        )),
-                        Expanded(
-                            child: Container(
-                          margin: EdgeInsets.only(right: 8),
-                          color: Colors.green,
-                        )),
+                      children: const [
+                        LatestProduct(),
+                        LatestProduct(),
+                        LatestProduct(),
                       ],
                     ),
                   ),
