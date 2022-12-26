@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               flex: 1,
               child: Container(
+                // color: Colors.amber,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -41,6 +42,7 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       flex: 3,
                       child: Container(
+                        // color: Colors.blue,
                         // width: size.width,
                         child: Column(
                           children: [
@@ -67,6 +69,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Expanded(
                                       child: CircleIcon(
+                                          size: size,
                                           func: () {
                                             Navigator.pushNamed(
                                                 context, "signup");
@@ -82,6 +85,7 @@ class _HomePageState extends State<HomePage> {
                                                   'images/icons8-clothes-48.png')))),
                                   Expanded(
                                       child: CircleIcon(
+                                          size: size,
                                           func: () {
                                             Navigator.pushNamed(
                                                 context, "signup");
@@ -98,6 +102,7 @@ class _HomePageState extends State<HomePage> {
                                                   'images/icons8-lipstick.png')))),
                                   Expanded(
                                       child: CircleIcon(
+                                          size: size,
                                           func: () {
                                             Navigator.pushNamed(
                                                 context, "signup");
@@ -114,8 +119,10 @@ class _HomePageState extends State<HomePage> {
                                                   'images/icons8-women-shoe-side-view-50.png')))),
                                   Expanded(
                                       child: CircleIcon(
+                                    size: size,
                                     func: () {
-                                      Navigator.pushNamed(context, "signup");
+                                      Navigator.pushNamed(
+                                          context, "allCategories");
                                     },
                                     myText: 'See All',
                                     color1: Color.fromARGB(255, 255, 255, 255),
@@ -134,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Expanded(
-                      flex: 5,
+                      flex: 4,
                       child: Container(
                         // width: size.width,
                         // color: Colors.amber,

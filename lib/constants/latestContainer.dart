@@ -44,7 +44,7 @@ class LatestContainer extends StatelessWidget {
               AdvText(advText: text2),
               AdvText(advText: text3),
               SizedBox(
-                height: size.height * 0.04,
+                height: size.height * 0.03,
               ),
               if (seemore == true)
                 Container(
