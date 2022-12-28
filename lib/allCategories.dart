@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ui/constants/categoriesTypes.dart';
 import 'package:my_ui/constants/circleIcon.dart';
 
 class AllCategories extends StatefulWidget {
@@ -86,9 +87,9 @@ class _AllCategoriesState extends State<AllCategories> {
                                         shadowColor: const Color.fromARGB(
                                             137, 255, 77, 0),
                                         myImage: const DecorationImage(
-                                            image: AssetImage(
-                                                'images/icons8-clothes-48.png'),
-                                            opacity: 0.8)),
+                                          image: AssetImage(
+                                              'images/icons8-clothes-48.png'),
+                                        )),
                                   )),
                                   Expanded(
                                       child: Container(
@@ -177,7 +178,7 @@ class _AllCategoriesState extends State<AllCategories> {
                                         bottom: size.height * 0.03),
                                     child: CircleIcon(
                                       size: size,
-                                      myText: 'myText',
+                                      myText: 'Home',
                                       color1: Color.fromARGB(255, 244, 85, 194),
                                       color2:
                                           Color.fromARGB(255, 205, 149, 215),
@@ -195,18 +196,25 @@ class _AllCategoriesState extends State<AllCategories> {
                                         top: size.height * 0.03,
                                         bottom: size.height * 0.03),
                                     child: CircleIcon(
-                                        size: size,
-                                        myText: 'myText',
-                                        color1: Colors.orange,
-                                        color2: Colors.white,
-                                        shadowColor: Colors.orange,
-                                        func: () {}),
+                                      size: size,
+                                      myText: 'Stationery',
+                                      color1:
+                                          Color.fromARGB(255, 182, 181, 181),
+                                      color2: Color.fromARGB(255, 65, 65, 65),
+                                      shadowColor:
+                                          Color.fromARGB(255, 121, 120, 120),
+                                      func: () {},
+                                      myImage: DecorationImage(
+                                          image: AssetImage(
+                                              'images/stationery.png'),
+                                          opacity: 0.8),
+                                    ),
                                   )),
                                 ],
                               ),
                             )),
                         Expanded(
-                            flex: 4,
+                            flex: 3,
                             child: Padding(
                               padding: EdgeInsets.only(
                                 left: size.width * 0.05,
@@ -224,7 +232,8 @@ class _AllCategoriesState extends State<AllCategories> {
                                           top: size.height * 0.03,
                                           bottom: size.height * 0.02),
                                       child: Divider(
-                                        color: Colors.grey,
+                                        color:
+                                            Color.fromARGB(255, 168, 168, 168),
                                         thickness: 0.3,
                                       ),
                                     ),
@@ -255,130 +264,9 @@ class _AllCategoriesState extends State<AllCategories> {
   }
 }
 
-class CategorieTypes extends StatelessWidget {
-  final String label;
-  const CategorieTypes({
-    Key? key,
-    required this.label,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.amber,
-      child: Column(
-        children: [
-          Expanded(
-              flex: 1,
-              child: Container(
-                alignment: Alignment.topLeft,
-                // color: Colors.amber,
-                child: Text(
-                  label,
-                  style: TextStyle(color: Colors.grey),
-                ),
-              )),
-          Expanded(
-              flex: 13,
-              child: Container(
-                decoration: BoxDecoration(
-                    // color: Colors.red,
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Color.fromARGB(86, 0, 0, 0),
-                        spreadRadius: -8,
-                        blurRadius: 15,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius: BorderRadius.circular(20)),
-                child: Column(
-                  children: const [
-                    Expanded(
-                        child: SmallCategories(
-                      mytext: 'T-shirts',
-                    )),
-                    Expanded(
-                        child: SmallCategories(
-                      mytext: 'Shirts',
-                    )),
-                    Expanded(
-                        child: SmallCategories(
-                      mytext: 'Pants & Jeans',
-                    )),
-                    Expanded(
-                        child: SmallCategories(
-                      mytext: 'Socks & Ties',
-                    )),
-                    Expanded(
-                        child: SmallCategories(
-                      mytext: 'Underwear',
-                    )),
-                    Expanded(
-                        child: SmallCategories(
-                      mytext: 'Jackets',
-                    )),
-                    Expanded(
-                        child: SmallCategories(
-                      mytext: 'coats',
-                    )),
-                    Expanded(
-                        child: SmallCategories(
-                      mytext: 'coats',
-                    )),
-                  ],
-                ),
-              )),
-        ],
-      ),
-    );
-  }
-}
 
-class SmallCategories extends StatelessWidget {
-  final String mytext;
-  const SmallCategories({
-    Key? key,
-    required this.mytext,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        padding: EdgeInsets.only(left: 10, right: 10),
-        decoration: const BoxDecoration(
-          border: Border(
-            bottom: BorderSide(color: Colors.grey, width: 0.08),
-            // top: BorderSide(color: Colors.grey, width: 0.4),
-          ),
-        ),
-        // color: Colors.pink,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              mytext,
-              style: TextStyle(
-                  fontSize: 16, color: Color.fromARGB(255, 124, 124, 124)),
-            ),
-            CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 229, 228, 228),
-              radius: 10,
-              child: Icon(
-                Icons.arrow_forward_ios_sharp,
-                color: Color.fromARGB(255, 124, 124, 124),
-                size: 10,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 // 298
 
 // Instead of using SingleChildScrollView, It's easier to use CustomScrollView with a SliverFillRemaining.

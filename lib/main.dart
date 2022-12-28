@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_ui/allCategories.dart';
 import 'package:my_ui/home.dart';
+import 'package:my_ui/productProduct.dart';
 import 'package:my_ui/signup.dart';
 
 void main() {
@@ -18,11 +19,12 @@ class MyApp extends StatelessWidget {
       //   splashColor: Colors.amber,
       // ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "home",
+      initialRoute: "productProduct",
       routes: {
         "signup": ((context) => SignUP()),
         "home": ((context) => HomePage()),
         "allCategories": ((context) => AllCategories()),
+        "productProduct": ((context) => ProductProduct()),
       },
     );
   }
