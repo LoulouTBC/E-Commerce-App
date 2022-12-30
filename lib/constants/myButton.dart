@@ -17,7 +17,7 @@ class MyButton extends StatelessWidget {
       decoration:
           BoxDecoration(borderRadius: BorderRadius.circular(30), boxShadow: [
         BoxShadow(
-          color: Color.fromARGB(91, 255, 105, 105),
+          color: Color.fromARGB(91, 224, 140, 140),
           spreadRadius: 3,
           blurRadius: 12,
           offset: Offset(2, 4), // changes position of shadow
@@ -89,7 +89,6 @@ class MyButton extends StatelessWidget {
         //               ),
         //             ),
         //           ),
-
         //         ],
         //       ),
         //     ),

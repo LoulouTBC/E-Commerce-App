@@ -33,7 +33,7 @@ class _AllCategoriesState extends State<AllCategories> {
                       // color: Colors.amber
                       child: Icon(
                         Icons.arrow_forward_ios_outlined,
-                        color: Color(0xffFF6969),
+                        color: const Color(0xffFF6969),
                         size: size.width * 0.06,
                       ),
                     ),
@@ -125,11 +125,11 @@ class _AllCategoriesState extends State<AllCategories> {
                                         },
                                         myText: 'Shoes',
                                         color1:
-                                            Color.fromARGB(255, 209, 230, 184),
+                                            const Color.fromARGB(255, 209, 230, 184),
                                         color2:
-                                            Color.fromARGB(255, 43, 229, 71),
+                                            const Color.fromARGB(255, 43, 229, 71),
                                         shadowColor:
-                                            Color.fromARGB(138, 31, 110, 43),
+                                            const Color.fromARGB(138, 31, 110, 43),
                                         myImage: const DecorationImage(
                                             image: AssetImage(
                                                 'images/icons8-women-shoe-side-view-50.png'),
@@ -143,12 +143,12 @@ class _AllCategoriesState extends State<AllCategories> {
                                         size: size,
                                         myText: 'Electronic',
                                         color1:
-                                            Color.fromARGB(255, 206, 154, 234),
+                                            const Color.fromARGB(255, 206, 154, 234),
                                         color2:
-                                            Color.fromARGB(255, 123, 187, 207),
+                                            const Color.fromARGB(255, 123, 187, 207),
                                         shadowColor:
-                                            Color.fromARGB(255, 188, 133, 218),
-                                        myImage: DecorationImage(
+                                            const Color.fromARGB(255, 188, 133, 218),
+                                        myImage: const DecorationImage(
                                             image: AssetImage(
                                               'images/electronic.png',
                                             ),
@@ -166,7 +166,7 @@ class _AllCategoriesState extends State<AllCategories> {
                                             color2: Colors.orange,
                                             shadowColor: Colors.orange,
                                             func: () {},
-                                            myImage: DecorationImage(
+                                            myImage: const DecorationImage(
                                                 image: AssetImage(
                                                     'images/furniture.png'),
                                                 opacity: 0.9),
@@ -179,13 +179,13 @@ class _AllCategoriesState extends State<AllCategories> {
                                     child: CircleIcon(
                                       size: size,
                                       myText: 'Home',
-                                      color1: Color.fromARGB(255, 244, 85, 194),
+                                      color1: const Color.fromARGB(255, 244, 85, 194),
                                       color2:
-                                          Color.fromARGB(255, 205, 149, 215),
+                                          const Color.fromARGB(255, 205, 149, 215),
                                       shadowColor:
-                                          Color.fromARGB(255, 204, 118, 220),
+                                          const Color.fromARGB(255, 204, 118, 220),
                                       func: () {},
-                                      myImage: DecorationImage(
+                                      myImage: const DecorationImage(
                                           image: AssetImage('images/home.png'),
                                           opacity: 0.8),
                                     ),
@@ -199,12 +199,12 @@ class _AllCategoriesState extends State<AllCategories> {
                                       size: size,
                                       myText: 'Stationery',
                                       color1:
-                                          Color.fromARGB(255, 182, 181, 181),
-                                      color2: Color.fromARGB(255, 65, 65, 65),
+                                          const Color.fromARGB(255, 182, 181, 181),
+                                      color2: const Color.fromARGB(255, 65, 65, 65),
                                       shadowColor:
-                                          Color.fromARGB(255, 121, 120, 120),
+                                          const Color.fromARGB(255, 121, 120, 120),
                                       func: () {},
-                                      myImage: DecorationImage(
+                                      myImage: const DecorationImage(
                                           image: AssetImage(
                                               'images/stationery.png'),
                                           opacity: 0.8),
@@ -223,7 +223,7 @@ class _AllCategoriesState extends State<AllCategories> {
                                 // color: Colors.black,
                                 child: Column(
                                   children: [
-                                    Expanded(
+                                    const Expanded(
                                         child: CategorieTypes(
                                       label: 'MEN\'S APPAREL',
                                     )),
@@ -231,17 +231,17 @@ class _AllCategoriesState extends State<AllCategories> {
                                       padding: EdgeInsets.only(
                                           top: size.height * 0.03,
                                           bottom: size.height * 0.02),
-                                      child: Divider(
+                                      child: const Divider(
                                         color:
                                             Color.fromARGB(255, 168, 168, 168),
                                         thickness: 0.3,
                                       ),
                                     ),
-                                    Expanded(
+                                    const Expanded(
                                         child: CategorieTypes(
                                       label: 'WOMEN\'S APPAREL',
                                     )),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     )
                                   ],

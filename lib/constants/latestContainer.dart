@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ui/constants/advText.dart';
+import 'package:my_ui/constants/bottomWithIcon.dart';
 
 class LatestContainer extends StatelessWidget {
   const LatestContainer(
@@ -47,64 +48,15 @@ class LatestContainer extends StatelessWidget {
                 height: size.height * 0.03,
               ),
               if (seemore == true)
-                Container(
-                  width: size.width * 0.35,
-                  height: size.height * 0.06,
-                  // decoration: BoxDecoration(
-                  // borderRadius:
-                  //     BorderRadius.circular(30),
-                  // boxShadow: [
-                  //   BoxShadow(
-                  //     color: Color.fromARGB(
-                  //         91, 255, 105, 105),
-                  //     spreadRadius: 3,
-                  //     blurRadius: 12,
-                  //     offset: Offset(2,
-                  //         4), // changes position of shadow
-                  //   ),
-                  // ]
-                  // ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(25),
-                    child: MaterialButton(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      disabledColor: Colors.grey,
-                      // shape:
-                      //     const RoundedRectangleBorder(
-                      //   borderRadius:
-                      //       BorderRadius.all(
-                      //     Radius.circular(30),
-                      //   ),
-                      // ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, "home");
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          // If I want it on left
-
-                          Text(
-                            "SEE MORE",
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: size.width * 0.036),
-                          ),
-                          CircleAvatar(
-                            maxRadius: size.width * 0.035,
-                            // minRadius: 10,
-                            backgroundColor: Color(0xffFF6969),
-                            child: Icon(
-                              Icons.arrow_forward_ios_outlined,
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              size: size.width * 0.035,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                )
+                BottomWithIcon(
+                  size: size,
+                  text: 'SEE MORE',
+                  backgroundBottomColor: Color.fromARGB(255, 255, 255, 255),
+                  backgroundIconColor: Color(0xffFF6969),
+                  iconColor: Colors.white,
+                  textColor: Colors.grey,
+                  icon: Icons.arrow_forward_ios,
+                ),
             ],
           ),
         ),

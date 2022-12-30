@@ -17,13 +17,11 @@ class DottedIndecator extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 2),
       height: size.width * 0.015,
-      width: i == currentSliderIndex
-          ? size.width * 0.02
-          : size.width * 0.015,
+      width: i == currentSliderIndex ? size.width * 0.02 : size.width * 0.015,
       decoration: BoxDecoration(
         color: i == currentSliderIndex
-            ? Colors.black
-            : Colors.grey,
+            ? Color.fromARGB(255, 113, 112, 112)
+            : Color.fromARGB(255, 202, 198, 198),
         shape: BoxShape.circle,
       ),
     );
