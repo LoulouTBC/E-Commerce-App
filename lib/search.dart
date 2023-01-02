@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:my_ui/constant.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -73,7 +74,7 @@ class _SearchState extends State<Search> {
                                           horizontal: 20,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: Color.fromARGB(
+                                          color: const Color.fromARGB(
                                               255, 239, 236, 236),
                                           borderRadius:
                                               BorderRadius.circular(29),
@@ -94,13 +95,13 @@ class _SearchState extends State<Search> {
                                       flex: 11,
                                       child: Padding(
                                         padding:
-                                            EdgeInsets.symmetric(vertical: 25),
+                                            const EdgeInsets.symmetric(vertical: 25),
                                         child: Column(
                                           children: [
                                             Expanded(
                                               //Last search
                                               child: Container(
-                                                color: Colors.amber,
+                                                // color: Colors.amber,
                                                 child: Column(
                                                   children: [
                                                     Expanded(
@@ -112,54 +113,28 @@ class _SearchState extends State<Search> {
                                                         children: const [
                                                           Text(
                                                               'RECENTLY VIEWED'),
-                                                          Text('CLEAR'),
+                                                          Text(
+                                                            'CLEAR',
+                                                            style: TextStyle(
+                                                                color: Color(
+                                                                    0xffFF6969)),
+                                                          ),
                                                         ],
                                                       ),
                                                     ),
                                                     Expanded(
                                                         flex: 3,
-                                                        child: Container(
-                                                          color: Colors.pink,
-                                                          child: ListView(
-                                                            scrollDirection:
-                                                                Axis.horizontal,
-                                                            children: [
-                                                              Padding(
-                                                                padding: EdgeInsets
-                                                                    .symmetric(
-                                                                        vertical:
-                                                                            size.width *
-                                                                                0.07),
-                                                                child:
-                                                                    Container(
-                                                                 
-                                                                  width:
-                                                                      size.width *
-                                                                          0.6,
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .center,
-                                                                  decoration: BoxDecoration(
-                                                                      color: Colors
-                                                                          .white,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              20)),
-                                                                  child: Row(
-                                                                    children: [
-                                                                      Container(
-                                                                        //resize image
-                                                                        child: Image.asset(
-                                                                            'images/shoe1.png'),
-                                                                      ),
-                                                                      const Text(
-                                                                          'lsjadfkalsdjflsdkfj'),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
+                                                        child: ListView(
+                                                          scrollDirection:
+                                                              Axis.horizontal,
+                                                          children: [
+                                                            RecentlyViewed(
+                                                                size: size),
+                                                            RecentlyViewed(
+                                                                size: size),
+                                                            RecentlyViewed(
+                                                                size: size),
+                                                          ],
                                                         ))
                                                   ],
                                                 ),
@@ -167,31 +142,88 @@ class _SearchState extends State<Search> {
                                             ),
                                             Expanded(
                                               //Last search
-                                              flex: 1,
-                                              child: Container(
-                                                color: Colors.amber,
-                                                child: Column(
-                                                  children: [
-                                                    Expanded(
-                                                      flex: 1,
-                                                      child: Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: const [
-                                                          Text(
-                                                              'RECENTLY VIEWED'),
-                                                          Text('CLEAR'),
-                                                        ],
-                                                      ),
+                                              flex: 2,
+                                              child: Column(
+                                                children: [
+                                                  Expanded(
+                                                    flex: 1,
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: const [
+                                                        Text('RECOMMENDED'),
+                                                        Text(
+                                                          'REFRESH',
+                                                          style: TextStyle(
+                                                              color: Color(
+                                                                  0xffFF6969)),
+                                                        ),
+                                                      ],
                                                     ),
-                                                    Expanded(
-                                                        flex: 2,
-                                                        child: Container(
-                                                          color: Colors.pink,
-                                                        ))
-                                                  ],
-                                                ),
+                                                  ),
+                                                  Expanded(
+                                                      flex: 4,
+                                                      child: Column(
+                                                        children: [
+                                                          Expanded(
+                                                              flex: 1,
+                                                              child: ListView(
+                                                                scrollDirection:
+                                                                    Axis.horizontal,
+                                                                children: [
+                                                                  Recommended(
+                                                                    size: size,
+                                                                    text:
+                                                                        'Denim Jeans',
+                                                                  ),
+                                                                  Recommended(
+                                                                    size: size,
+                                                                    text:
+                                                                        'Mini Skirt',
+                                                                  ),
+                                                                  Recommended(
+                                                                    size: size,
+                                                                    text:
+                                                                        'Jacket',
+                                                                  ),
+                                                                  Recommended(
+                                                                    size: size,
+                                                                    text:
+                                                                        'Accessories',
+                                                                  ),
+                                                                ],
+                                                              )),
+                                                          Expanded(
+                                                              flex: 1,
+                                                              child: ListView(
+                                                                scrollDirection:
+                                                                    Axis.horizontal,
+                                                                children: [
+                                                                  Recommended(
+                                                                    size: size,
+                                                                    text:
+                                                                        'Sports Accessories',
+                                                                  ),
+                                                                  Recommended(
+                                                                    size: size,
+                                                                    text:
+                                                                        'Yoga pants',
+                                                                  ),
+                                                                  Recommended(
+                                                                    size: size,
+                                                                    text:
+                                                                        'Eye Shadow',
+                                                                  ),
+                                                                ],
+                                                              )),
+                                                          Expanded(
+                                                              flex: 3,
+                                                              child:
+                                                                  Container())
+                                                        ],
+                                                      ))
+                                                ],
                                               ),
                                             ),
                                           ],
@@ -207,8 +239,105 @@ class _SearchState extends State<Search> {
               ),
             ),
           ),
-          Expanded(flex: 1, child: Container(color: Colors.amber)),
         ],
+      ),
+    );
+  }
+}
+
+class Recommended extends StatelessWidget {
+  const Recommended({
+    Key? key,
+    required this.size,
+    required this.text,
+  }) : super(key: key);
+
+  final Size size;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:
+          EdgeInsets.symmetric(vertical: size.width * 0.02, horizontal: 10),
+      child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          // width:
+          //     size.width *
+          //         0.6,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: const [
+                BoxShadow(
+                    color: Color.fromARGB(255, 222, 218, 218),
+                    blurRadius: 50,
+                    spreadRadius: -5,
+                    offset: Offset(15, 1)),
+              ]),
+          child: Text(
+            text,
+            style: const TextStyle(color: Color.fromARGB(255, 132, 132, 132)),
+          )),
+    );
+  }
+}
+
+class RecentlyViewed extends StatelessWidget {
+  const RecentlyViewed({
+    Key? key,
+    required this.size,
+  }) : super(key: key);
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:
+          EdgeInsets.symmetric(vertical: size.width * 0.05, horizontal: 10),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        // width:
+        //     size.width *
+        //         0.6,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: const [
+              BoxShadow(
+                  color: Color.fromARGB(255, 230, 227, 227),
+                  blurRadius: 30,
+                  spreadRadius: -5,
+                  offset: Offset(15, 1)),
+            ]),
+        child: Row(
+          children: [
+            Image.asset('images/shoe1.png'),
+            const SizedBox(
+              width: 10,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Ankle Boots',
+                  style: TextStyle(
+                      fontSize: 16, color: Color.fromARGB(255, 132, 132, 132)),
+                ),
+                const Text(
+                  '\$49.99',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 92, 91, 91)),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

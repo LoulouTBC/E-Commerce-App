@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       //   splashColor: Colors.amber,
       // ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "search",
+      initialRoute: "signup",
       routes: {
         "signup": ((context) => const SignUP()),
         "home": ((context) => const HomePage()),
