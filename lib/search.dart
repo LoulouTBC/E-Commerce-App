@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:my_ui/constant.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -10,6 +8,7 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
+  String hintText = 'Search Something';
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -79,13 +78,16 @@ class _SearchState extends State<Search> {
                                           borderRadius:
                                               BorderRadius.circular(29),
                                         ),
-                                        child: const TextField(
+                                        child: TextField(
+                                          onTap: () {
+                                            hintText = '';
+                                          },
                                           textAlign: TextAlign.center,
                                           cursorColor:
                                               Color.fromARGB(255, 20, 16, 16),
                                           decoration: InputDecoration(
                                             alignLabelWithHint: true,
-                                            hintText: 'Search Something',
+                                            hintText: hintText,
                                             border: InputBorder.none,
                                           ),
                                         ),
@@ -94,8 +96,8 @@ class _SearchState extends State<Search> {
                                     Expanded(
                                       flex: 11,
                                       child: Padding(
-                                        padding:
-                                            const EdgeInsets.symmetric(vertical: 25),
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 25),
                                         child: Column(
                                           children: [
                                             Expanded(

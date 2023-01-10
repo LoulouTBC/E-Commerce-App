@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 
 class SmallCategories extends StatelessWidget {
   final String mytext;
-  const SmallCategories({
-    Key? key,
-    required this.mytext,
-  }) : super(key: key);
+  IconData? icon;
+  SmallCategories({Key? key, required this.mytext, this.icon})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +22,20 @@ class SmallCategories extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            // Icon(
+            //   icon,
+            //   color: Color.fromARGB(255, 124, 124, 124),
+            // ),
+            // SizedBox(
+            //   width: 15,
+            // ),
+
             Text(
               mytext,
               style: TextStyle(
                   fontSize: 16, color: Color.fromARGB(255, 124, 124, 124)),
             ),
+
             CircleAvatar(
               backgroundColor: Color.fromARGB(255, 229, 228, 228),
               radius: 10,

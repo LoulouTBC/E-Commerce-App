@@ -55,9 +55,12 @@ class _ProductProductState extends State<ProductProduct> {
                         child: Container(
                           alignment: Alignment.centerLeft,
                           // color: Colors.black,
-                          child: const Icon(
-                            Icons.arrow_back_ios_new,
-                            size: 25,
+                          child: IconButton(
+                            icon: const Icon(Icons.arrow_back_ios_new),
+                            // size: 25,
+                            onPressed: (() {
+                              Navigator.pushNamed(context, "home");
+                            }),
                           ),
                         )),
                     Expanded(
@@ -80,19 +83,17 @@ class _ProductProductState extends State<ProductProduct> {
                               children: [
                                 const Text(
                                   '\$49.49',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold),
+                                  style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 SizedBox(
                                   width: size.width * 0.01,
                                 ),
                                 Container(
-                                  padding: const EdgeInsets.only(
-                                      left: 2, right: 5),
+                                  padding:
+                                      const EdgeInsets.only(left: 2, right: 5),
                                   decoration: BoxDecoration(
                                       color: Colors.red,
-                                      borderRadius:
-                                          BorderRadius.circular(20)),
+                                      borderRadius: BorderRadius.circular(20)),
                                   child: Row(
                                     children: [
                                       Icon(

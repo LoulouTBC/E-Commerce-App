@@ -40,7 +40,7 @@ class CategorieTypes extends StatelessWidget {
                     color: Color.fromARGB(255, 255, 255, 255),
                     borderRadius: BorderRadius.circular(20)),
                 child: Column(
-                  children: const [
+                  children:  [
                     Expanded(
                         child: SmallCategories(
                       mytext: 'T-shirts',
