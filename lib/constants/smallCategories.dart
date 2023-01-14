@@ -11,13 +11,13 @@ class SmallCategories extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        padding: EdgeInsets.only(left: 10, right: 10),
-        decoration: const BoxDecoration(
-          border: Border(
-            bottom: BorderSide(color: Colors.grey, width: 0.08),
-            // top: BorderSide(color: Colors.grey, width: 0.4),
-          ),
-        ),
+        padding: const EdgeInsets.only(left: 10, right: 10),
+        // decoration: const BoxDecoration(
+        //   border: Border(
+        //     bottom: BorderSide(color: Colors.grey, width: 0.08),
+        //     // top: BorderSide(color: Colors.grey, width: 0.4),
+        //   ),
+        // ),
         // color: Colors.pink,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,11 +32,11 @@ class SmallCategories extends StatelessWidget {
 
             Text(
               mytext,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 16, color: Color.fromARGB(255, 124, 124, 124)),
             ),
 
-            CircleAvatar(
+            const CircleAvatar(
               backgroundColor: Color.fromARGB(255, 229, 228, 228),
               radius: 10,
               child: Icon(

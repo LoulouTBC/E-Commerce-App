@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ui/allCategories.dart';
+import 'package:my_ui/cart.dart';
 import 'package:my_ui/home.dart';
 import 'package:my_ui/more.dart';
 import 'package:my_ui/productProduct.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       //   splashColor: Colors.amber,
       // ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "profile",
+      initialRoute: "cart",
       routes: {
         "signup": ((context) => const SignUP()),
         "home": ((context) => const HomePage()),
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         "search": ((context) => Search()),
         "profile": ((context) => Profile()),
         "menu": ((context) => More()),
+        "cart": ((context) => Cart()),
       },
     );
   }

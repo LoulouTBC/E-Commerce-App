@@ -8,7 +8,8 @@ class BottomWithIcon extends StatelessWidget {
     required this.backgroundBottomColor,
     required this.backgroundIconColor,
     required this.iconColor,
-    required this.textColor, required this.icon,
+    required this.textColor,
+    required this.icon,
   }) : super(key: key);
 
   final Size size;
@@ -54,11 +55,13 @@ class BottomWithIcon extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 // If I want it on left
-
+                SizedBox(
+                  width: size.width * 0.01,
+                ),
                 Text(
                   text,
                   style:
-                      TextStyle(color: textColor, fontSize: size.width * 0.036),
+                      TextStyle(color: textColor, fontSize: size.width * 0.030),
                 ),
                 CircleAvatar(
                   maxRadius: size.width * 0.035,

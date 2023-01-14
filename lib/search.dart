@@ -48,7 +48,7 @@ class _SearchState extends State<Search> {
                             child: Container(
                               alignment: Alignment.topLeft,
                               child: const Text(
-                                "Categories",
+                                "Search",
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                     // backgroundColor: Colors.white,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_ui/constant.dart';
+import 'package:my_ui/bottomBar.dart';
 import 'package:my_ui/constants/circleIcon.dart';
 import 'package:my_ui/constants/latestContainer.dart';
 import 'package:my_ui/constants/latestProduct.dart';
@@ -12,7 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String currentOption = 'home';
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -207,41 +206,31 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Expanded(
-              flex: 1,
-              child: Container(
-                color: Colors.white,
-                child: Row(children: [
-                  icons(context, size, 'home', Icons.home_outlined),
-                  icons(context, size, 'search', Icons.search),
-                  icons(context, size, 'cart', Icons.shopping_cart_outlined),
-                  icons(context, size, 'profile', Icons.person_outlined),
-                  icons(context, size, 'menu', Icons.menu),
-                ]),
-              )),
+          Expanded(flex: 1, child: BottomBar(current: 'home')),
         ],
       ),
     );
   }
 
-  Expanded icons(
-      BuildContext context, Size size, String nameOfIcon, IconData icon) {
-    return Expanded(
-      child: IconButton(
-        onPressed: () {
-          Navigator.pushNamed(context, nameOfIcon);
-          setState(() {
-            currentOption = nameOfIcon;
-          });
-        },
-        icon: Icon(
-          icon,
-          size: size.width * 0.08,
-          color: currentOption == nameOfIcon
-              ? primerColor
-              : const Color.fromARGB(255, 194, 193, 193),
-        ),
-      ),
-    );
-  }
+  // Expanded icons(
+  //     BuildContext context, Size size, String nameOfIcon, IconData icon) {
+  //   return Expanded(
+  //     child: IconButton(
+  //       onPressed: () {
+  //         Navigator.pushNamed(context, nameOfIcon);
+  //         setState(() {
+  //           currentOption = nameOfIcon;
+  //         });
+  //       },
+  //       icon: Icon(
+  //         icon,
+  //         size: size.width * 0.08,
+  //         color: currentOption == nameOfIcon
+  //             ? primerColor
+  //             : const Color.fromARGB(255, 194, 193, 193),
+  //       ),
+  //     ),
+  //   );
+  // }
 }
+
