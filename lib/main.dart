@@ -24,17 +24,17 @@ class MyApp extends StatelessWidget {
       //   splashColor: Colors.amber,
       // ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "cart",
+      initialRoute: "signup",
       routes: {
         "signup": ((context) => const SignUP()),
         "home": ((context) => const HomePage()),
         "allCategories": ((context) => const AllCategories()),
         "productProduct": ((context) => const ProductProduct()),
         "test": ((context) => HomeScreen()),
-        "search": ((context) => Search()),
-        "profile": ((context) => Profile()),
-        "menu": ((context) => More()),
-        "cart": ((context) => Cart()),
+        "search": ((context) => const Search()),
+        "profile": ((context) => const Profile()),
+        "menu": ((context) => const More()),
+        "cart": ((context) => const Cart()),
       },
     );
   }

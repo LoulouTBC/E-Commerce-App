@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 class MyButton extends StatelessWidget {
   const MyButton({
     Key? key,
-    required this.size,
+    required this.size, required this.text,
   }) : super(key: key);
 
   final Size size;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +15,18 @@ class MyButton extends StatelessWidget {
       margin: EdgeInsets.only(top: size.height * 0.02),
       width: size.width * 0.8,
       height: size.height * 0.07,
-      decoration:
-          BoxDecoration(borderRadius: BorderRadius.circular(30), boxShadow: [
-        BoxShadow(
-          color: Color.fromARGB(91, 224, 140, 140),
-          spreadRadius: 3,
-          blurRadius: 12,
-          offset: Offset(2, 4), // changes position of shadow
-        ),
-      ]),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: const [
+            BoxShadow(
+              color: Color.fromARGB(91, 224, 140, 140),
+              spreadRadius: 3,
+              blurRadius: 12,
+              offset: Offset(2, 4), // changes position of shadow
+            ),
+          ]),
       child: MaterialButton(
-        color: Color(0xffFF6969),
+        color: const Color(0xffFF6969),
         disabledColor: Colors.grey,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
@@ -32,14 +34,14 @@ class MyButton extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, "home");
+          Navigator.pushReplacementNamed(context, "home");
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const <Widget>[
+          children:  <Widget>[
             // If I want it on left
 
-            Opacity(
+            const Opacity(
               // if I change opacity it will appear
               opacity: 0.0,
               child: CircleAvatar(
@@ -51,10 +53,10 @@ class MyButton extends StatelessWidget {
               ),
             ),
             Text(
-              "Sign Up",
-              style: TextStyle(color: Colors.white, fontSize: 18.0),
+              text,
+              style: const TextStyle(color: Colors.white, fontSize: 18.0),
             ),
-            CircleAvatar(
+            const CircleAvatar(
               maxRadius: 16,
               // minRadius: 10,
               backgroundColor: Colors.white,

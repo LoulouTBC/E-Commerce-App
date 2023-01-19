@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:my_ui/bottomBar.dart';
 import 'package:my_ui/constant.dart';
 import 'package:my_ui/constants/bottomWithIcon.dart';
@@ -16,51 +14,55 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-        body: Column(children: [
-      Expanded(
-          flex: 13,
-          child: Padding(
-              padding: EdgeInsets.all(size.width * 0.05),
-              child: Column(children: [
-                Expanded(
-                  flex: 1,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.messenger_outline)),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.notifications_none)),
-                    ],
+    return WillPopScope(
+      onWillPop: () async {
+        Navigator.pushNamedAndRemoveUntil(
+            context, 'home', (Route<dynamic> route) => false);
+        return false;
+      },
+      child: Scaffold(
+          body: Column(children: [
+        Expanded(
+            flex: 13,
+            child: Padding(
+                padding: EdgeInsets.all(size.width * 0.05),
+                child: Column(children: [
+                  Expanded(
+                    flex: 1,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.messenger_outline)),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.notifications_none)),
+                      ],
+                    ),
                   ),
-                ),
-                Expanded(
-                  flex: 12,
-                  child: Column(
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: Container(
-                          alignment: Alignment.topLeft,
-                          child: const Text(
-                            "Cart",
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                                // backgroundColor: Colors.white,
-                                fontFamily: "Prompt",
-                                fontSize: 29,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 1),
+                  Expanded(
+                    flex: 12,
+                    child: Column(
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            alignment: Alignment.topLeft,
+                            child: const Text(
+                              "Cart",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                  // backgroundColor: Colors.white,
+                                  fontFamily: "Prompt",
+                                  fontSize: 29,
+                                  fontWeight: FontWeight.w900,
+                                  letterSpacing: 1),
+                            ),
                           ),
                         ),
-                      ),
-                      Expanded(
-                          flex: 13,
-                          child: Container(
-                            // color: Colors.amber,
+                        Expanded(
+                            flex: 13,
                             child: Column(children: [
                               const Expanded(
                                   flex: 3,
@@ -91,67 +93,64 @@ class _CartState extends State<Cart> {
                               ),
                               Expanded(
                                 flex: 2,
-                                child: Container(
-                                  // color: Colors.amber,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: const [
-                                          Text(
-                                            'TOTAL',
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                      children: const [
+                                        Text(
+                                          'TOTAL',
+                                          style: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 190, 189, 189),
+                                              fontSize: 12),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 6),
+                                          child: Text(
+                                            '\$81.57',
                                             style: TextStyle(
-                                                color: Color.fromARGB(
-                                                    255, 190, 189, 189),
-                                                fontSize: 12),
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 23),
                                           ),
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 6),
-                                            child: Text(
-                                              '\$81.57',
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 23),
-                                            ),
-                                          ),
-                                          Text(
-                                            'Free Domestic Shipping',
-                                            style: TextStyle(
-                                                color: Color.fromARGB(
-                                                    255, 124, 124, 124),
-                                                fontSize: 12),
-                                          ),
-                                        ],
-                                      ),
-                                      BottomWithIcon(
-                                          size: size * 1.2,
-                                          text: 'CHECKOUT',
-                                          backgroundBottomColor: primerColor,
-                                          backgroundIconColor: Colors.white,
-                                          iconColor: primerColor,
-                                          textColor: Colors.white,
-                                          icon:
-                                              Icons.arrow_forward_ios_outlined)
-                                    ],
-                                  ),
+                                        ),
+                                        Text(
+                                          'Free Domestic Shipping',
+                                          style: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 124, 124, 124),
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
+                                    BottomWithIcon(
+                                        size: size * 1.2,
+                                        text: 'CHECKOUT',
+                                        backgroundBottomColor: primerColor,
+                                        backgroundIconColor: Colors.white,
+                                        iconColor: primerColor,
+                                        textColor: Colors.white,
+                                        icon:
+                                            Icons.arrow_forward_ios_outlined)
+                                  ],
                                 ),
                               )
-                            ]),
-                          ))
-                    ],
-                  ),
-                )
-              ]))),
-      Expanded(flex: 1, child: BottomBar(current: 'cart'))
-    ]));
+                            ]))
+                      ],
+                    ),
+                  )
+                ]))),
+        Expanded(flex: 1, child: BottomBar(current: 'cart'))
+      ])),
+    );
   }
 }
 
@@ -174,8 +173,8 @@ class CartElement extends StatelessWidget {
               // width: 200,
               // height: 200,
               decoration: BoxDecoration(
-                  boxShadow: [
-                    const BoxShadow(
+                  boxShadow: const [
+                    BoxShadow(
                         color: Color.fromARGB(255, 188, 186, 186),
                         spreadRadius: -20,
                         blurRadius: 50,
@@ -227,33 +226,33 @@ class CartElement extends StatelessWidget {
                     height: 10,
                   ),
                   Row(
-                    children: [
-                      const CircleAvatar(
+                    children: const [
+                      CircleAvatar(
                           radius: 10,
                           backgroundColor: Color.fromARGB(255, 214, 213, 213),
                           child: Text(
                             '-',
                             style: TextStyle(color: Colors.black),
                           )),
-                      const SizedBox(
+                      SizedBox(
                         width: 10,
                       ),
-                      const Text(
+                      Text(
                         '1',
                         style: TextStyle(
                             fontSize: 17,
                             color: Color.fromARGB(255, 130, 130, 130)),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 10,
                       ),
-                      const CircleAvatar(
+                      CircleAvatar(
                         backgroundColor: Color.fromARGB(255, 214, 213, 213),
+                        radius: 10,
                         child: Text(
                           '+',
                           style: TextStyle(color: Colors.black),
                         ),
-                        radius: 10,
                       ),
                     ],
                   ),
